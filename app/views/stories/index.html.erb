@@ -1,0 +1,24 @@
+<h1 class="title is-1 has-text-centered"> Readit </h1>
+
+<% @stories.each do |story|%>
+<div class="card">
+<div class="card-header">
+<div class="card-header-title">
+ <%= story.name %> 
+
+<div class="card-content">
+
+<%= link_to story.link %>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<% end %>
+
+<br>
+<br>
+
+<%= link_to "Create a new Story", new_story_path, class: "button" %>

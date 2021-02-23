@@ -1,0 +1,35 @@
+<h1 class="title is-1 has-text-centered"> Readit </h1>
+
+<br>
+<br>
+
+<h2 class="subtitle is-1"> Create a new story </h2>
+
+<% if @story.errors.any? %>
+
+    <ul>
+        <% @story.errors.full_messages.each do |message| %>
+        <div class="notification is-danger is-light">
+        <button class="delete"></button>
+
+            <li> <%= message %> </li>
+
+        </button>
+        <% end %>
+
+    </ul>
+
+    <% end %>
+<%= form_for @story do |f| %>
+
+    <%= f.label :name , class: :label %>
+    <%= f.text_field :name ,class: "input is-primary input is-rounded"  %><br>
+    <%= f.label :link , class: :label %>
+    <%= f.text_field :link, class: "input is-primary input is-rounded" %><br>
+    <br> 
+
+    <%= f.submit  class: "button is-link" %>
+
+
+
+<% end %>
